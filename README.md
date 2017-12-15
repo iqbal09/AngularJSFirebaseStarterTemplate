@@ -24,18 +24,18 @@ and use the new `firebase.database().ref()` method.
 # Run a Local Web Server for Development
 Before running this project you need npm already installed on your computer
 if you already have npm before then run this command
-```groovy
+```bash
 $ npm install -g firebase-tools
 ```
 
 now it's time to install firebase into our npm system
-```groovy
+```bash
 $ firebase init    # Generate a firebase.json (REQUIRED)
 ```
 sync firebase to your firebase console account then copy the public folder to the public folder that has been generated firebase-cli earlier
 
 now lets run our project
 
-```groovy
+```bash
 $ firebase serve   # Start development server
 ```
