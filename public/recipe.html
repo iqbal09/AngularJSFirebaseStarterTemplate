@@ -1,0 +1,146 @@
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Data Tables
+      <small>advanced tables</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Recipe</a></li>
+      <li class="active">List of Recipe</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+      
+
+        <div class="box" ng-show="shTable">
+          <div class="box-header">
+             
+                    
+                        <h3 style="float:left;" class="box-title">Recipe</h3>
+                      
+               
+                    
+                          <button style="float:right;" class='btn btn-primary' ng-click="showForm()" >Add Recipe</button>
+                   
+                  
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table id="example1" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>No</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="recipe in recipes | orderBy:'id'">
+                  <td>{{ $index + 1 }}</td>
+                  <td><img ng-src="{{ recipe.image_url }}" width="200px" > </td>
+                  <td> {{ recipe.name}} </td>
+                  <td>
+                    <button class='btn btn-warning' ng-click="showForm(recipe)" >Edit</button>
+                    <button class='btn btn-danger' ng-click="deleteForm(recipe)" >Delete</button>
+                </td>
+              </tr>  
+             
+              </tbody>
+              
+            </table>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+
+
+        <div class="box" ng-show="shForm">
+          <div class="box-header">
+            <h3 class="box-title">{{typeForm}}</h3>
+          </div>
+          
+          <div class="box-body">
+            <form ng-submit="proccessData()">
+            
+            <div class="form-group">
+                <label>Select Category</label>
+                  <select class="form-control" ng-model="selectedCategory">
+                      <option ng-repeat="category in categories" value="{{category.id}}">{{category.category_name}}</option>
+                  </select>
+            </div>
+
+
+            <div class="form-group">
+              <label>Recipe Name</label>
+              <input type="text"  ng-model="name" class="form-control" placeholder="Enter ...">
+            </div>
+
+            <div class="form-group">
+                <label>Cooking Time</label>
+                <input type="text"  ng-model="time" class="form-control" placeholder="Enter ...">
+            </div>
+
+
+            <div class="form-group">
+              <label for="exampleInputFile"> Image </label> <span id='alert_foto'></span><br>
+              <img ng-src="{{ photo_url }}" width='200px'>
+              <input id="foto_button" type="file" value='upload'>
+              <input ng-model="photo_name" type="hidden"  >
+              <input ng-model="photo_url" type="hidden" >
+              <input ng-model="id_img" type="hidden" >
+              <input ng-model="key" type="hidden" >
+              <br />
+              <progress value='0' max='100' class="form-control" id='uploader'></progress>
+            </div>
+
+
+            <div class="form-group">
+                <textarea ng-model="content" data-ck-editor></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+          </form>
+            
+
+          </div>
+
+          
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+      <!-- /.col -->
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- /.row -->
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
