@@ -39,3 +39,8 @@ now lets run our project
 ```bash
 $ firebase serve   # Start development server
 ```
+
+
+#### Made with &#9829;
+Follow me on instagram :)
+- [@iqbalhood](https://instagram.com/iqbalhood)
