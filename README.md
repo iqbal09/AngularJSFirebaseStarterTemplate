@@ -1,5 +1,5 @@
 <p align="center">
-  <h2 align="center">AngularJS + Firebase Starter Template</h2>
+  <h2 align="center">AngularJS + Firebase Starter Template </h2>
 </p>
 
 ![Logo](CoverTemplate.png)
